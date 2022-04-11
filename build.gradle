@@ -1,0 +1,68 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven { url "http://maven.aliyun.com/repository/gradle-plugin" }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-json
+    implementation 'org.springframework.boot:spring-boot-starter-json:2.4.4'
+    //swagger 相关
+    // https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    // https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter
+    implementation 'com.github.xiaoymin:knife4j-spring-boot-starter:3.0.3'
+    //ThymeLeaf依赖
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.6'
+    //切面
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+    implementation 'org.springframework.boot:spring-boot-starter-aop:2.6.6'
+    //数据库
+    // https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation 'mysql:mysql-connector-java:8.0.28'
+    //redis
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis:2.6.6'
+    //activemq
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-activemq
+    implementation 'org.springframework.boot:spring-boot-starter-activemq:2.6.6'
+    //shiro
+    // https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring-boot-starter
+    implementation 'org.apache.shiro:shiro-spring-boot-starter:1.9.0'
+
+    //lucene
+    // https://mvnrepository.com/artifact/org.apache.lucene/lucene-core
+    implementation 'org.apache.lucene:lucene-core:8.11.1'
+// https://mvnrepository.com/artifact/org.apache.lucene/lucene-queryparser
+    implementation 'org.apache.lucene:lucene-queryparser:8.11.1'
+    // https://mvnrepository.com/artifact/org.apache.lucene/lucene-analyzers-common
+    implementation 'org.apache.lucene:lucene-analyzers-common:8.11.1'
+// https://mvnrepository.com/artifact/org.apache.lucene/lucene-highlighter
+    implementation 'org.apache.lucene:lucene-highlighter:8.11.1'
+// https://mvnrepository.com/artifact/org.apache.lucene/lucene-analyzers-smartcn
+    implementation 'org.apache.lucene:lucene-analyzers-smartcn:8.11.1'
+
+
+
+
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}

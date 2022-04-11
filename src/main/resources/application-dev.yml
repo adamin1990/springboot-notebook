@@ -1,0 +1,52 @@
+server:
+  port: 8081
+spring:
+  thymeleaf:
+    cache: false
+    enabled: true
+    prefix:  classpath:/templates/
+#数据库
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+    username: root
+    password: DRsXT5ZJ6Oi55LPQ
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 100
+    maxWait: 10000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+#redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 1000
+        max-idle: 500
+        min-idle: 10
+        max-wait: 2000
+  #activemq配置
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+      enabled: false
+  #支持 发布/订阅模式 与Queue模式不可得兼
+#  jms:
+#    pub-sub-domain: true
+
+mybatis:
+  type-aliases-package: com.adamin.demo.entity
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations:
+    - classpath:mapper/*.xml
